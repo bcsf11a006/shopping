@@ -1,0 +1,58 @@
+﻿
+@model eadp1.Models.Product
+
+
+<title>Register</title>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    function find() {
+
+
+        var s = $("#type").val();
+
+        var a;
+        $.getJSON("/Account/getList/?type=" + s, function (data) {
+            $("#f").append('<option>-Select Item-</option>');
+            $.each(data, function (i, item) {
+                $("#f").append('<option value=' + item.Id + '>' + item.Name + '</option>');
+            });
+            
+        });
+
+
+    }
+</script>
+<script>
+    function chkPrice() {
+
+
+        var s = $("#f").val();
+
+        var a;
+
+        $.getJSON("/Account/getPrice/?id=" + s, function (data) {
+            $("#p1").text("Rs: " + data);
+        });
+
+    }
+</script>
+
+
+
+<h1 style="background-color:burlywood;font-style:initial;font-family:'Comic Sans MS';text-align:center">Shoe Search</h1>
+
+
+        Type <select id="type" onchange="find()" style="color:black">
+    <option value="Bata">Bata</option>
+    <option value="Don Carlos">Don Carlos</option>
+    <option value="more">More</option>
+                 <input id="name" maxlength="45" name="name" type="text" /> 
+
+</select>
+        Name<select id="f" style="color:black"></select><br />
+<input type="submit" value="Check Price" onclick="chkPrice()" />
+
+<p id="p1"></p>

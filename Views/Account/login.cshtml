@@ -1,0 +1,49 @@
+﻿
+<!-- Website template by freewebsitetemplates.com -->
+
+@model eadp1.Models.User
+
+	
+	<title>Register</title>
+	@{
+        Layout="~/Views/Shared/_Layout.cshtml";	
+        }
+
+
+	
+	<div id="body">
+		<div id="contents">
+			 <div class="login">
+                 <h3 style="color:yellow">Sign In to Shop , Track and Manage your Order  </h3>
+                 <form action="~/Account/ValidateLogin" id="register" method="post">
+                     @Html.AntiForgeryToken()
+                     @Html.ValidationSummary(true)
+                 <table border="0">
+                 <tbody>
+                   
+            
+                    <tr>
+                        <td style="color:yellow">@Html.LabelFor(model => model.email)</><td>
+                        <td>@Html.TextBoxFor(model => model.email)<td>
+                    </tr>
+
+            
+                    <tr>
+                         <td style="color:yellow">@Html.LabelFor(model => model.password)<td>
+                         <td>@Html.TextBoxFor(model => model.password)<td>
+                         
+                         <td><input name="Submit" type="submit" value="Login" style="padding-left:10px"/></td>     
+                    </tr>
+            
+                   
+                     
+                </tbody>
+
+            </table>
+            </form>
+        </div>
+	</div>
+	</div>
+	
+
+</html>

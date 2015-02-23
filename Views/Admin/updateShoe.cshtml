@@ -1,0 +1,26 @@
+﻿@model eadp1.Models.Product
+
+<title>Fancy Shoe</title>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+   }
+<h2>update</h2>
+
+    <div id="body">
+        <div id="contents">
+            <h1>Update Product </h1>
+            <form action="~/Admin/updateConfirmShoe/@Model.Id" method="post" enctype="multipart/form-data">
+                Item Number = <input type="text" value="@Model.brandName" name="t1" />
+                <br> <br />
+                Description = <input type="text" value="@Model.type" name="t3" />
+                <br> <br />
+                Price = <input type="text" value="@Model.price" name="t4" />
+                <br> <br />
+                Image = <input type="file" value="@Model.imgLink" name="file" />
+                <input type="submit" value="Update" />
+            </form>
+
+        </div>
+    </div>
+
+

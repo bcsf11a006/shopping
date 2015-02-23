@@ -1,0 +1,38 @@
+﻿
+<!-- Website template by freewebsitetemplates.com -->
+@model eadp1.Models.Product
+
+
+	<title>Fancy Shoe</title>
+	@{
+        Layout="~/Views/Shared/_Layout.cshtml";	
+        }
+
+
+	<div id="body">
+		<div id="contents">
+			<h1>New Product </h1>
+	       
+
+            <form action="/admin/addShoesValidate" method="post" enctype="multipart/form-data">
+
+                <div>@Html.LabelFor(model => model.brandName)</div>
+                <div>@Html.TextBoxFor(model => model.brandName)</div>
+
+                <div>@Html.LabelFor(b => b.type)</div>
+                <div>@Html.TextBoxFor(b => b.type)</div>
+
+                <div>@Html.LabelFor(model => model.price)</div>
+                <div>@Html.TextBoxFor(model => model.price)</div>
+
+                <div>@Html.LabelFor(b => b.imgLink, new { style = "font-size:160%;" })</div>
+                <input type="file" id="file" name="file" />
+
+
+
+                <input type="submit" value="add" />
+            </form>
+
+
+		</div>
+        </div>	

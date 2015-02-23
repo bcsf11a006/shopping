@@ -1,0 +1,108 @@
+﻿
+<!-- Website template by freewebsitetemplates.com -->
+@model List<eadp1.Models.Product>
+
+
+	<title>Fancy Shoe</title>
+	@{
+        Layout="~/Views/Shared/_Layout.cshtml";	
+        }
+
+
+	<div id="body">
+		<div id="contents">
+			<h1>Products</h1>
+			<div  id="sidebar"  " class="well-sidebar-nav-fixed">
+            <!-- Search -->
+                <div class="box search">
+                    <h2 style="color:yellow">Search by <span></span></h2>
+                    <div class="box-content">
+                        <form action="#" method="post">
+                  
+                            <div class="inline-field">
+                                <label style="color:yellow">Price</label>
+                                <select class="field small-field">
+                                    <option value="">999</option>
+                                    <option value="">1499</option>
+                                    <option value="">1999</option>
+                                    <option value="">2499</option>
+                                    <option value="">2999</option>
+                                    <option value="">3499</option>
+                                    <option value="">3999</option>
+                                    <option value="">4499</option>
+                                    <option value="">4999</option>
+                                    <option value="">5499</option>
+                                    <option value="">5999</option>
+                                </select>
+                                <label style="color:yellow">to:</label>
+                                <select class="field small-field">
+                                    <option value="">1499</option>
+                                    <option value="">1999</option>
+                                    <option value="">2499</option>
+                                    <option value="">2999</option>
+                                    <option value="">3499</option>
+                                    <option value="">3999</option>
+                                    <option value="">4499</option>
+                                    <option value="">4999</option>
+                                    <option value="">5499</option>
+                                    <option value="">5999</option>
+                                    <option value="">6499</option>
+                                    <option value="">6999</option>
+                                </select>
+                            </div>
+					
+                        <input type="submit" class="search-submit" value="Search" />
+                   
+                    </form>
+                </div>
+            </div>
+      <!-- End Search -->
+      <!-- Categories -->
+            <div class="box categories">
+           
+
+                <h2 style="color:yellow">Types <span></span></h2>
+                <div class="box-content">
+                <ul>
+                    <li><a href="#">Casual</a></li>
+                    <li><a href="#">Athelatics</a></li>
+                    <li class="last"><a href="#">Dress</a></li>
+                 </ul>
+                </div>
+
+        <h2 style="color:yellow ">Brands <span></span></h2>
+        <div class="box-content">
+          <ul>
+            <li><a href="#">Don Carlos</a></li>
+            <li><a href="#">Bata</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Calza</a></li>
+            <li class="last"><a href="#">Cheetah</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- End Categories -->
+    </div>
+			<div id="main">
+				<div id="contents1">
+			
+            @foreach (var product in Model)
+            {   
+                <ul id="shirts" class ="preloader">
+				<li>
+					<a href="#header"><img src= '@product.imgLink' alt="Img" style="width:500px; height:280px"></a> <a href="#header" class="button">Add to cart</a>
+					<p>
+						@product.brandName <br> <span>Rs. @product.price</span>
+					</p>
+                    <p>Hello World</p>
+				</li>
+                </ul>
+	
+            }
+
+		</div>
+				
+			</div>
+		</div>
+	</div>
